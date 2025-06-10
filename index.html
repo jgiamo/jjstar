@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Play Monster Game - 最刺激的在线游戏体验</title>
-    <meta name="description" content="立即体验Monster Game，享受最刺激的在线游戏体验。免费畅玩，无需下载，即刻开始你的冒险之旅！">
+    <title>Red Rush - 极速赛车体验</title>
+    <meta name="description" content="体验Red Rush带来的极致速度与激情！挑战极限，征服赛道，成为真正的赛车王者！">
     <style>
         :root {
             --apple-blue: #007AFF;
             --apple-gray: #8E8E93;
             --apple-light-gray: #F2F2F7;
             --apple-dark: #1D1D1F;
+            --racing-red: #FF3B30;
         }
 
         * {
@@ -37,19 +38,41 @@
             padding: 40px 0;
             background-color: white;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--racing-red), var(--apple-blue));
         }
 
         h1 {
-            font-size: 2.5rem;
-            color: var(--apple-blue);
+            font-size: 3rem;
+            color: var(--racing-red);
             margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            animation: speed 2s infinite;
+        }
+
+        @keyframes speed {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         .intro {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             color: var(--apple-gray);
             max-width: 800px;
             margin: 0 auto;
+            font-weight: 500;
         }
 
         .game-container {
@@ -58,6 +81,7 @@
             padding: 20px;
             border-radius: 12px;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
         }
 
         .game-frame {
@@ -72,9 +96,11 @@
         }
 
         h2 {
-            color: var(--apple-blue);
+            color: var(--racing-red);
             margin: 30px 0 15px;
             font-size: 1.8rem;
+            border-bottom: 2px solid var(--racing-red);
+            padding-bottom: 10px;
         }
 
         .feature-list {
@@ -83,16 +109,41 @@
         }
 
         .feature-list li {
-            margin: 10px 0;
-            padding-left: 20px;
+            margin: 15px 0;
+            padding-left: 25px;
             position: relative;
+            font-size: 1.1rem;
         }
 
         .feature-list li:before {
-            content: "•";
-            color: var(--apple-blue);
+            content: "→";
+            color: var(--racing-red);
             position: absolute;
             left: 0;
+            font-weight: bold;
+        }
+
+        .language-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .language-btn {
+            background: var(--racing-red);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .language-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
         }
 
         @media (max-width: 768px) {
@@ -115,45 +166,120 @@
     </style>
 </head>
 <body>
+    <div class="language-switch">
+        <button class="language-btn" onclick="toggleLanguage()">EN</button>
+    </div>
+
     <header>
         <div class="container">
-            <h1>Play Monster Game</h1>
-            <p class="intro">体验前所未有的刺激冒险，在Monster Game中展现你的游戏天赋！</p>
+            <h1>Red Rush</h1>
+            <p class="intro">感受极速与激情的完美碰撞，在Red Rush中体验前所未有的赛车快感！</p>
         </div>
     </header>
 
     <main class="container">
         <div class="game-container">
-            <iframe src="https://knightyun.github.io/maze-game/" class="game-frame" allowfullscreen></iframe>
+            <iframe src="https://1games.io/embed/red-rush" class="game-frame" allowfullscreen></iframe>
         </div>
 
         <div class="game-info">
             <h2>游戏特色</h2>
             <ul class="feature-list">
-                <li>精美的游戏画面和流畅的操作体验</li>
-                <li>丰富的游戏关卡和挑战模式</li>
-                <li>实时多人对战系统</li>
-                <li>成就系统和排行榜</li>
+                <li>极致的速度体验，感受肾上腺素飙升的快感</li>
+                <li>精心设计的赛道，挑战你的驾驶极限</li>
+                <li>真实的物理引擎，带来震撼的碰撞效果</li>
+                <li>丰富的赛车升级系统，打造你的专属战车</li>
             </ul>
 
             <h2>游戏说明</h2>
-            <p>Monster Game是一款充满挑战性的在线游戏，玩家需要在游戏中控制角色完成各种任务和挑战。游戏采用最新的HTML5技术开发，无需下载即可直接在线游玩。</p>
+            <p>Red Rush是一款充满激情的赛车游戏，你将驾驶红色箭头赛车，在充满挑战的赛道上展现你的驾驶技术。游戏采用先进的物理引擎，带来真实的驾驶体验，让你感受速度与激情的完美结合。</p>
 
             <h2>操作指南</h2>
             <ul class="feature-list">
-                <li>使用方向键或WASD控制角色移动</li>
-                <li>空格键进行跳跃</li>
-                <li>鼠标点击进行攻击</li>
-                <li>ESC键暂停游戏</li>
+                <li>方向键控制赛车转向</li>
+                <li>空格键使用氮气加速</li>
             </ul>
 
-            <h2>系统要求</h2>
-            <ul class="feature-list">
-                <li>支持所有主流浏览器</li>
-                <li>需要稳定的网络连接</li>
-                <li>建议使用Chrome或Firefox浏览器获得最佳体验</li>
-            </ul>
         </div>
     </main>
+
+    <script>
+        let isEnglish = false;
+        const translations = {
+            title: {
+                zh: "Red Rush - 极速赛车体验",
+                en: "Red Rush - Ultimate Racing Experience"
+            },
+            intro: {
+                zh: "感受极速与激情的完美碰撞，在Red Rush中体验前所未有的赛车快感！",
+                en: "Experience the perfect blend of speed and excitement in Red Rush!"
+            },
+            features: {
+                zh: "游戏特色",
+                en: "Game Features"
+            },
+            feature1: {
+                zh: "极致的速度体验，感受肾上腺素飙升的快感",
+                en: "Ultimate speed experience with adrenaline-pumping excitement"
+            },
+            feature2: {
+                zh: "精心设计的赛道，挑战你的驾驶极限",
+                en: "Carefully designed tracks to challenge your driving limits"
+            },
+            feature3: {
+                zh: "真实的物理引擎，带来震撼的碰撞效果",
+                en: "Realistic physics engine with stunning collision effects"
+            },
+            feature4: {
+                zh: "丰富的赛车升级系统，打造你的专属战车",
+                en: "Rich car upgrade system to build your ultimate racing machine"
+            },
+            feature5: {
+                zh: "游戏说明",
+                en: "Game description"
+            },
+            description: {
+                zh: "Red Rush是一款充满激情的赛车游戏，你将驾驶红色箭头赛车，在充满挑战的赛道上展现你的驾驶技术。游戏采用先进的物理引擎，带来真实的驾驶体验，让你感受速度与激情的完美结合。",
+                en: "Red Rush is an exciting racing game where you'll drive the Red Arrow car through challenging tracks. With advanced physics engine, experience realistic driving and feel the perfect blend of speed and excitement."
+            },
+            controls: {
+                zh: "操作指南",
+                en: "Controls"
+            },
+            control1: {
+                zh: "方向键控制赛车转向",
+                en: "Arrow keys to steer"
+            },
+            control2: {
+                zh: "空格键使用氮气加速",
+                en: "Space bar for nitro boost"
+            }
+        };
+
+        function toggleLanguage() {
+            isEnglish = !isEnglish;
+            const lang = isEnglish ? 'en' : 'zh';
+            document.querySelector('.language-btn').textContent = isEnglish ? '中' : 'EN';
+            
+            // Update content
+            document.title = translations.title[lang];
+            document.querySelector('.intro').textContent = translations.intro[lang];
+            document.querySelectorAll('h2')[0].textContent = translations.features[lang];
+            document.querySelectorAll('h2')[1].textContent = translations.feature5[lang];
+            document.querySelectorAll('.feature-list li')[0].textContent = translations.feature1[lang];
+            document.querySelectorAll('.feature-list li')[1].textContent = translations.feature2[lang];
+            document.querySelectorAll('.feature-list li')[2].textContent = translations.feature3[lang];
+            document.querySelectorAll('.feature-list li')[3].textContent = translations.feature4[lang];
+            document.querySelector('.game-info p').textContent = translations.description[lang];
+            document.querySelectorAll('h2')[2].textContent = translations.controls[lang];
+            document.querySelectorAll('.feature-list li')[4].textContent = translations.control1[lang];
+            document.querySelectorAll('.feature-list li')[5].textContent = translations.control2[lang];
+        }
+
+        // 页面加载时自动执行一次语言切换
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleLanguage();
+        });
+    </script>
 </body>
 </html> 
